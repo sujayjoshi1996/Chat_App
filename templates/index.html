@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <title>The chatting app!!</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+    <div class="text-center well"><b>Chat now !!</b></div>
+
+
+    <div class="col-sm-4">
+
+    <form id="form1">
+                  <input id="usr" autocomplete="off" autofocus placeholder="Enter user name" type="text">
+                  <input type="submit">
+              </form>
+
+
+    <form id="form2">
+                  <input id="channel" autocomplete="off" autofocus placeholder="Add channel" type="text">
+                  <input type="submit">
+              </form>
+
+
+    <form id="form3">
+              <select id="cselect">
+                {% for i in range(len(channel_list))  %}
+                  <option> {{ channe1l_list[i] }} </option>
+                  {% end for %} </select>
+                  <button type "submit">select</button>
+              </form>
+
+
+    <form id="form4">
+                  <input id="msg" autocomplete="off" autofocus placeholder="Send message" type="text">
+                  <button type="submit"> Send </button>
+              </form>
+
+              <div class="container">
+               <div class="col-sm-8">
+                 <div class="no_message">
+                   <h1 style='color: #ccc'>No message yet..</h1>
+                   <h2>{{cselected}}</h2>
+                   <ul id="mss">
+                   </ul>
+                 </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    </body>
+  </html>
